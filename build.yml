@@ -5,5 +5,7 @@ phases:
       #- aws ecr get-login-password | docker login --username AWS --password-stdin $ECR_ENDPOINT
       - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - docker build -t builtimage .
-      - docker tag builtimage:latest $ECR_IMAGE_URL:mspythonservice
-      - docker push $ECR_IMAGE_URL:mspythonservice
+      - echo "${ECR_IMAGE_URL}"
+      - echo $ECR_IMAGE_URL
+      - docker tag builtimage:latest $ECR_IMAGE_URL:python
+      - docker push $ECR_IMAGE_URL:python
