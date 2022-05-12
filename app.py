@@ -2,7 +2,6 @@ import json
 import os
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
-from numpy import identity
 from sqlalchemy import Column, Integer, String, Float
 from flask_marshmallow import Marshmallow
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token
