@@ -2,10 +2,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-      - docker build -t builtimage .
-      - echo "${ECR_IMAGE_URL}"
-      - echo $ECR_IMAGE_URL
+      #- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - aws ecr get-login-password | docker login --username AWS --password-stdin $ECR_ENDPOINT
+      - docker build -t builtimage .
       - docker tag builtimage:latest $ECR_IMAGE_URL:python
       - docker push $ECR_IMAGE_URL:python
