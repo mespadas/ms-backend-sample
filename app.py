@@ -118,4 +118,6 @@ users_schema = UserSchema(many=True)
 
 
 if __name__ == '__main__':
-   app.run()
+    stage = os.environ.get('STAGE', 'local')
+    the_port = 5000
+    app.run(host='0.0.0.0', port=the_port)
