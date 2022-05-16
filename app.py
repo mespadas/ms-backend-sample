@@ -34,11 +34,11 @@ def db_seed():
 
 @app.route('/')
 def hello_world():
-    return 'Hello World'
+    return 'Hello World API'
 
 @app.route('/super_simple')
 def super_simple():
-    return jsonify(message='Hello from the API'), 200
+    return jsonify(message='Hello from the API (this is Python with Flask)'), 200
 
 @app.route('/not_found')
 def not_found():
